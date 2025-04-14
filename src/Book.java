@@ -233,9 +233,9 @@ public class Book  {
     }
 
     public static void topAuthors() {
-        ArrayList<Book> books = Book.readData("data.csv");
+        ArrayList<Book> booksShow = readData("data.csv");
 
-        Map<String, Long> authorCount = books.stream()
+        Map<String, Long> authorCount = booksShow.stream()
                 .collect(Collectors.groupingBy(b -> b.author, Collectors.counting()));
 
         System.out.println("Топ авторов по количеству книг:");
@@ -243,6 +243,19 @@ public class Book  {
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
                 .limit(5)
                 .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+    }
+
+    public static void RandomBook() {
+        ArrayList<Book> booksShow = readData("data.csv");
+
+        if (booksShow.isEmpty()) {
+            System.out.println("База пуста.");
+            return;
+        }
+
+        Book random = booksShow.get((int)(Math.random() * booksShow.size()));
+        System.out.println("Книга дня специально для вас!:");
+        random.display();
     }
 
     public static void FindByRating() {

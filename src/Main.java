@@ -28,6 +28,7 @@ public class Main {
                 System.out.println("9 - Найти среднестатистическое");
                 System.out.println("10  - Найти самую ... книгу");
                 System.out.println("11  - Топ авторов");
+                System.out.println("12  - Случайная книга");
                 System.out.println("0 - Выйти");
                 System.out.print("Введите число: ");
 
@@ -102,6 +103,9 @@ public class Main {
                         break;
                     case "11":
                         Book.topAuthors();
+                        break;
+                    case "12":
+                        Book.RandomBook();
                         break;
                     default:
                         System.out.println("Неверный выбор. Попробуйте снова.");
