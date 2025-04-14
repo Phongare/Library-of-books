@@ -35,6 +35,110 @@ public class Book  {
 
     }
 
+    public static void showExtremes() {
+        ArrayList<Book> books = Book.readData("data.csv");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Найти cамую..");
+        System.out.println("1 - низко/высокооцененную книгу");
+        System.out.println("2 - короткую/длинную книгу");
+        System.out.println("3 - дорогую/дешевую книгу");
+        System.out.println("4 - старую/новую книгу");
+        System.out.println("5 - книгу которой больше/меньше всего в наличии");
+        System.out.println("Введите число: ");
+        int prompt = readIntInRange(input,1,5);
+
+        switch (prompt) {
+            case 1:
+                System.out.println("1 - низкооцененная");
+                System.out.println("2 - высокооцененная");
+                System.out.println("Введите число:");
+                int prompt1 = readIntInRange(input,1,2);
+                if(prompt1 == 1) {
+                    books.stream().min(Comparator.comparingDouble(b -> b.rating)).ifPresent(b -> {
+                        System.out.println("Самая низкооцененная книга:");
+                        b.display();
+                    });
+                } else {
+                    books.stream().max(Comparator.comparingDouble(b -> b.rating)).ifPresent(b -> {
+                        System.out.println("Самая высокооцененная книга:");
+                        b.display();
+                    });
+                }
+                break;
+            case 2:
+                System.out.println("1 - короткая");
+                System.out.println("2 - длинная");
+                System.out.println("Введите число:");
+                int prompt2 = readIntInRange(input,1,2);
+                if(prompt2 == 1) {
+                    books.stream().min(Comparator.comparingInt(b -> b.pages)).ifPresent(b -> {
+                        System.out.println("Самая короткая книга:");
+                        b.display();
+                    });
+                } else {
+                    books.stream().max(Comparator.comparingInt(b -> b.pages)).ifPresent(b -> {
+                        System.out.println("Самая длинная книга:");
+                        b.display();
+                    });
+                }
+                break;
+            case 3:
+                System.out.println("1 - дешевая");
+                System.out.println("2 - дорогая");
+                System.out.println("Введите число:");
+                int prompt3 = readIntInRange(input,1,2);
+                if(prompt3 == 1) {
+                    books.stream().min(Comparator.comparingInt(b -> b.price)).ifPresent(b -> {
+                        System.out.println("Самая дешёвая книга:");
+                        b.display();
+                    });
+                } else {
+                    books.stream().max(Comparator.comparingInt(b -> b.price)).ifPresent(b -> {
+                        System.out.println("Самая дорогая книга:");
+                        b.display();
+                    });
+                }
+                break;
+            case 4:
+                System.out.println("1 - старая");
+                System.out.println("2 - новая");
+                System.out.println("Введите число:");
+                int prompt4 = readIntInRange(input,1,2);
+                if(prompt4 == 1) {
+                    books.stream().min(Comparator.comparingInt(b -> b.year)).ifPresent(b -> {
+                        System.out.println("Самая старая книга:");
+                        b.display();
+                    });
+                } else {
+                    books.stream().max(Comparator.comparingInt(b -> b.year)).ifPresent(b -> {
+                        System.out.println("Самая новая книга:");
+                        b.display();
+                    });
+                }
+                break;
+            case 5:
+                System.out.println("1 - меньше в наличии");
+                System.out.println("2 - больше");
+                System.out.println("Введите число:");
+                int prompt5 = readIntInRange(input,1,2);
+                if(prompt5 == 1) {
+                    books.stream().min(Comparator.comparingInt(b -> b.stock)).ifPresent(b -> {
+                        System.out.println("Меньше всего в начичии:");
+                        b.display();
+                    });
+                } else {
+                    books.stream().max(Comparator.comparingInt(b -> b.stock)).ifPresent(b -> {
+                        System.out.println("Больше всего в начичии:");
+                        b.display();
+                    });
+                }
+                break;
+        }
+
+
+
+    }
+
     public static void Average() {
         ArrayList<Book> booksShow = readData("data.csv");
 

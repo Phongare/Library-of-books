@@ -26,6 +26,7 @@ public class Main {
                 System.out.println("7 - Сортировать по алфавиту");
                 System.out.println("8 - Найти по рейтингу");
                 System.out.println("9 - Найти среднестатистическое");
+                System.out.println("10  - Найти самую ... книгу");
                 System.out.println("0 - Выйти");
                 System.out.print("Введите число: ");
 
@@ -95,6 +96,9 @@ public class Main {
                     case "9":
                         Book.Average();
                         break;
+                    case "10":
+                        Book.showExtremes();
+                        break;
                     default:
                         System.out.println("Неверный выбор. Попробуйте снова.");
                         valid = true;
@@ -104,9 +108,12 @@ public class Main {
             }
 
             if (on) {
-                System.out.print("Хотите выполнить еще одно действие? (да/нет): ");
+                System.out.println("Хотите выполнить еще одно действие? (да/нет): ");
+                System.out.println("1 - Да ");
+                System.out.println("2 - Нет ");
+                System.out.print("Введите число: ");
                 String answer = input.nextLine().trim().toLowerCase();
-                if (!answer.equals("да")) {
+                if (!answer.equals("1")) {
                     on = false;
                     System.out.println("До свидания!");
                 } else {
