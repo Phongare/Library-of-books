@@ -95,6 +95,49 @@ public class Book  {
         }
     }
 
+    public static void FindByRating() {
+        ArrayList<Book> booksShow = readData("data.csv");
+        ArrayList<Book> ratingBooks = new ArrayList<>();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Введите Рейтинг: ");
+        double prompt = readDouble(input);
+        System.out.println("1 - Больше него. ");
+        System.out.println("2 - Меньше него. ");
+        System.out.println("3 - Ровно он. ");
+        System.out.println("Введите число:  ");
+        int option = readIntInRange(input,1,3);
+
+        int cnt = 0;
+
+        switch (option) {
+            case 1:
+                for (Book s : booksShow) {
+                    if (s.rating > prompt) {
+                        s.display();
+                        cnt++;
+                    }
+                }
+            case 2:
+                for (Book s : booksShow) {
+                    if(s.rating < prompt) {
+                        s.display();
+                        cnt++;
+                    }
+                }
+            case 3:
+                for (Book s : booksShow) {
+                    if(s.rating == prompt) {
+                        s.display();
+                        cnt++;
+                    }
+                }
+        }
+        if(cnt==0) {
+            System.out.println("Книг с таким рейтингом не существует");
+        }
+
+    }
+
     public static int Search(Scanner input) {
         ArrayList<Book> booksShow = readData("data.csv");
         ArrayList<Book> matchingBooks = new ArrayList<>();
@@ -395,4 +438,5 @@ public class Book  {
         }
 
     }
+
 }
