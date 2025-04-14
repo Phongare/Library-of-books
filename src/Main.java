@@ -25,6 +25,7 @@ public class Main {
                 System.out.println("6 - Сортировать по ID");
                 System.out.println("7 - Сортировать по алфавиту");
                 System.out.println("8 - Найти по рейтингу");
+                System.out.println("9 - Найти среднестатистическое");
                 System.out.println("0 - Выйти");
                 System.out.print("Введите число: ");
 
@@ -90,6 +91,9 @@ public class Main {
                         break;
                     case "8":
                         Book.FindByRating();
+                        break;
+                    case "9":
+                        Book.Average();
                         break;
                     default:
                         System.out.println("Неверный выбор. Попробуйте снова.");

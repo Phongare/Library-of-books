@@ -35,6 +35,42 @@ public class Book  {
 
     }
 
+    public static void Average() {
+        ArrayList<Book> booksShow = readData("data.csv");
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Найти среднее арифметическое..");
+        System.out.println("1 - страниц");
+        System.out.println("2 - рейтинга");
+        System.out.println("3 - цен");
+        System.out.println("4 - годов выпуска");
+        System.out.println("5 - кол-ва в наличии");
+        System.out.println("Введите число: ");
+        int prompt = readIntInRange(input,1,5);
+        switch (prompt) {
+            case 1:
+                System.out.printf("%.0f",booksShow.stream().mapToInt(s -> s.pages).average().orElse(0));
+                System.out.println();
+                break;
+            case 2:
+                System.out.printf("%.1f",booksShow.stream().mapToDouble(s -> s.rating).average().orElse(0));
+                System.out.println();
+                break;
+            case 3:
+                System.out.printf("%.2f",booksShow.stream().mapToDouble(s -> s.price).average().orElse(0));
+                System.out.println();
+                break;
+            case 4:
+                System.out.printf("%.0f",booksShow.stream().mapToInt(s -> s.year).average().orElse(0));
+                System.out.println();
+                break;
+            case 5:
+                System.out.printf("%.0f",booksShow.stream().mapToInt(s -> s.stock).average().orElse(0));
+                System.out.println();
+                break;
+        }
+    }
+
     public static void SortByID () {
         ArrayList<Book> booksShow = readData("data.csv");
         List<Book> booksSorted = booksShow.stream()
@@ -99,7 +135,7 @@ public class Book  {
         ArrayList<Book> booksShow = readData("data.csv");
         ArrayList<Book> ratingBooks = new ArrayList<>();
         Scanner input = new Scanner(System.in);
-        System.out.println("Введите Рейтинг: ");
+        System.out.println("Введите Рейтинг (skip - для пропуска): ");
         double prompt = readDouble(input);
         System.out.println("1 - Больше него. ");
         System.out.println("2 - Меньше него. ");
@@ -115,6 +151,7 @@ public class Book  {
                     if (s.rating > prompt) {
                         s.display();
                         cnt++;
+
                     }
                 }
             case 2:
@@ -122,6 +159,7 @@ public class Book  {
                     if(s.rating < prompt) {
                         s.display();
                         cnt++;
+
                     }
                 }
             case 3:
@@ -129,9 +167,13 @@ public class Book  {
                     if(s.rating == prompt) {
                         s.display();
                         cnt++;
+
                     }
                 }
         }
+
+
+
         if(cnt==0) {
             System.out.println("Книг с таким рейтингом не существует");
         }
