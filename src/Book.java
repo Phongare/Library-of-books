@@ -2,10 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -235,11 +232,24 @@ public class Book  {
         }
     }
 
+    public static void topAuthors() {
+        ArrayList<Book> books = Book.readData("data.csv");
+
+        Map<String, Long> authorCount = books.stream()
+                .collect(Collectors.groupingBy(b -> b.author, Collectors.counting()));
+
+        System.out.println("Топ авторов по количеству книг:");
+        authorCount.entrySet().stream()
+                .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+                .limit(5)
+                .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+    }
+
     public static void FindByRating() {
         ArrayList<Book> booksShow = readData("data.csv");
         ArrayList<Book> ratingBooks = new ArrayList<>();
         Scanner input = new Scanner(System.in);
-        System.out.println("Введите Рейтинг (skip - для пропуска): ");
+        System.out.println("Введите Рейтинг ");
         double prompt = readDouble(input);
         System.out.println("1 - Больше него. ");
         System.out.println("2 - Меньше него. ");
