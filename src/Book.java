@@ -281,6 +281,7 @@ public class Book  {
 
                     }
                 }
+
                 break;
             case 2:
                 for (Book s : booksShow) {
