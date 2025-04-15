@@ -1,7 +1,7 @@
 # Book Management System
 
 ## Student Name
-**[Your Full Name Here]**
+**[Usenkanov Ularbek]**
 
 ---
 
@@ -71,15 +71,14 @@ This is a console-based Java application that manages a library of books. It use
 ### Case 1: Adding a Book
 
 **Input:**
-Название: Война и мир
-Автор: Лев Толстой
-Рейтинг: 4.8
-Количество: 3
+![image](https://github.com/user-attachments/assets/4e1a4de7-f1a7-4f75-8863-16aa40da313f)
 
 
 
-**Expected Output:**
-Книга успешно добавлена!
+
+**Expected Output:![image](https://github.com/user-attachments/assets/3127cbfd-ff46-42ea-9e42-fc8f146afd2f)
+
+
 
 
 
@@ -88,12 +87,14 @@ This is a console-based Java application that manages a library of books. It use
 ### Case 2: Deleting a Book
 
 **Input:**
-ID книги для удаления: 3
+![image](https://github.com/user-attachments/assets/809b584c-7867-450d-81e0-b1aa7b5645d3)
+
 
 
 
 **Expected Output:**
-Книга с ID 3 удалена.
+![image](https://github.com/user-attachments/assets/5308d3e8-4ac2-4ed4-b917-a50a8b1f7c4f)
+
 
 
 
@@ -102,12 +103,14 @@ ID книги для удаления: 3
 ### Case 3: Searching by Rating
 
 **Input:**
-Введите рейтинг: 4.5
+![image](https://github.com/user-attachments/assets/12976cab-d321-46bf-993d-c30135382fab)
+
 
 
 
 **Expected Output:**
-Найдено 2 книги с рейтингом >= 4.5 [Книга 1] [Книга 2]
+![image](https://github.com/user-attachments/assets/9013132f-75ef-410f-9f46-26a35adbe29a)
+
 
 
 
@@ -116,7 +119,8 @@ ID книги для удаления: 3
 ### Case 4: Show Average
 
 **Expected Output:**
-Средний рейтинг: 4.3 Среднее количество: 2.6
+![image](https://github.com/user-attachments/assets/8c7ec66a-a328-46a3-9a81-642fecdd596b)
+
 
 
 
@@ -141,7 +145,6 @@ ID книги для удаления: 3
 - ✅ Fully functional Java application.
 - ✅ Clean and modular code.
 - ✅ Follows Java best practices.
-- ✅ Minimal inline comments for readability.
 
 ---
 
