@@ -281,6 +281,7 @@ public class Book  {
 
                     }
                 }
+                break;
             case 2:
                 for (Book s : booksShow) {
                     if(s.rating < prompt) {
@@ -289,6 +290,7 @@ public class Book  {
 
                     }
                 }
+                break;
             case 3:
                 for (Book s : booksShow) {
                     if(s.rating == prompt) {
@@ -297,6 +299,7 @@ public class Book  {
 
                     }
                 }
+                break;
         }
 
 
