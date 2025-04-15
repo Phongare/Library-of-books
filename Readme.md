@@ -153,3 +153,7 @@ This is a console-based Java application that manages a library of books. It use
 This Book Management System project demonstrates the use of file handling, object-oriented programming, and user interaction through a command-line interface. It serves as a basic yet effective model for managing structured data in Java.
 
 Let me know if you want the README.md saved as a file or if you’d like help generating the screenshots or editing Book.java to match the new features perfectly.
+
+---
+
+## Presentation: https://www.canva.com/design/DAGkuHuT15Y/I0JFNnsWtDm-4px0XslzvA/edit?utm_content=DAGkuHuT15Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
