@@ -71,10 +71,8 @@ This is a console-based Java application that manages a library of books. It use
 ### Case 1: Adding a Book
 
 **Input:**
-Название: Война и мир
-Автор: Лев Толстой
-Рейтинг: 4.8
-Количество: 3
+![image](https://github.com/user-attachments/assets/4e1a4de7-f1a7-4f75-8863-16aa40da313f)
+
 
 
 
